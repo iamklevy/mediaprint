@@ -270,6 +270,5 @@ window.AR = {
   'ft.made': '323 شارع السودان — المهندسين — الجيزة',
   'ft.fb@aria-label': 'صفحة فيسبوك',
   'ft.wa@aria-label': 'واتساب',
-  'ft.tel@aria-label': 'اتصال',
-  'wa.float@aria-label': 'كلمنا على واتساب'
+  'ft.tel@aria-label': 'اتصال'
 };

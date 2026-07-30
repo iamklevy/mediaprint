@@ -568,17 +568,6 @@ html[dir="rtl"] .crumbs .sep { transform: scaleX(-1); display: inline-block; }
 .socials a:hover { background: var(--accent); transform: translateY(-3px); color: #fff; }
 .socials svg { inline-size: 19px; block-size: 19px; }
 
-/* ---------- whatsapp float ---------- */
-.wa {
-  position: fixed; inset-block-end: 22px; inset-inline-end: 22px; z-index: 70;
-  inline-size: 58px; block-size: 58px; border-radius: 50%;
-  background: #25D366; color: #fff; display: grid; place-items: center;
-  box-shadow: 0 10px 30px rgba(37, 211, 102, .38);
-  transition: transform .3s var(--ease);
-}
-.wa:hover { transform: scale(1.08); }
-.wa svg { inline-size: 30px; block-size: 30px; }
-
 /* ---------- reveal ----------
    Scoped to .js so the content is never hidden when scripting is off or the
    script fails to load — without this, a JS error blanks the whole page. */
@@ -637,5 +626,5 @@ html[dir="rtl"] .crumbs .sep { transform: scaleX(-1); display: inline-block; }
 }
 
 @media print {
-  .header, .wa, .nav__links, .cta { display: none !important; }
+  .header, .nav__links, .cta { display: none !important; }
 }

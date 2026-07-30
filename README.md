@@ -113,6 +113,34 @@ Adding a product means copying an `<article class="pcard">` block in `products.h
 `data-cat` of `plastic` / `paper` / `fabric` / `print` so the filter picks it up, and adding the
 matching English keys.
 
+## Prices
+
+All figures live in one file: `assets/js/pricing.js`. Nothing else contains a price, so updating
+the price list means editing that file and nothing more.
+
+Source: `Price list 2026-3-25.pdf`, cross-checked against `قائمة الاسعار.xlsx`. The spreadsheet
+quotes a single quantity (300) and equals `tier300 + printing` on every row that appears in both
+documents — that reconciliation is what verifies the figures.
+
+Three pricing models are supported, because the price list uses three:
+
+| Model | Used by | Behaviour |
+| --- | --- | --- |
+| `tiers` | boxes, garment bags, totes, kraft bags | Unit price drops at quantity breaks |
+| `finish` | hang tags | One MOQ per size; price varies by finishing option |
+| `perKg` | courier bags | Sold by weight; unit = `perKg ÷ pcsPerKg` |
+
+`assets/js/pricer.js` renders the calculator into any `<div class="pricer" data-product="ID"></div>`
+where `ID` matches a key in `PRICING.products`. It re-renders on language switch and hands the
+finished spec to WhatsApp.
+
+**To change a price**, edit the numbers in `pricing.js` and bump the `?v=` on the script tags. To
+add a product, add a `PRICING.products` entry and drop the matching `<div class="pricer">` into that
+product's card.
+
+Variants marked `check: true` are values I could not read unambiguously from the PDF — see the
+handover notes before treating them as final.
+
 ## The quote form has no backend
 
 `contact.html`'s form does not email anyone. On submit it assembles the answers into a WhatsApp

@@ -74,6 +74,9 @@
     }
 
     try { localStorage.setItem(STORE, lang); } catch (e) {}
+
+    /* the price calculator renders its own strings, so it re-renders on switch */
+    document.dispatchEvent(new CustomEvent('mp:lang', { detail: { lang: doc.lang } }));
   }
 
   function initLang() {

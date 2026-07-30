@@ -52,6 +52,12 @@ rankings survive:
 WordPress install is removed. Download those images into `assets/img/` and find-replace the
 `https://mediaprint-eg.com/wp-content/uploads/` prefix with `assets/img/`.
 
+**1b. The benefit cards use Unsplash stock photos**, hotlinked to `images.unsplash.com`. Unsplash
+permits hotlinking its CDN and its licence needs no attribution, so these are safe to leave as they
+are — but they are generic stock. Replacing them with photographs of your own workshop, press and
+finished jobs would make that section considerably stronger. Swap the four `src` values on
+`.bcard__bg` in `index.html`.
+
 **2. Confirm which photo belongs to which product.** I matched them to the order they appeared on
 the old homepage, which should be right, but it is worth a look. One is a genuine guess: the
 *شكاير 5 كيلو* card reuses the main hero photo because the old site had no dedicated image for it.

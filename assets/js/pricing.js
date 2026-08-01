@@ -113,6 +113,30 @@ window.PRICING = {
       }
     },
 
+    /* ---- page 9: أكياس ألومنيوم — aluminium / metallised pouches ----
+       Three-side seal. Each size carries its own MOQ, so this uses the
+       'finish' model with a single finish and the MOQ held per variant.
+       NOTE: the client described "4 sizes, 1-colour MOQ 1,000" — that does not
+       match the MOQs printed in the PDF below. Confirm before publishing. */
+    aluminium: {
+      model: 'finish',
+      needsReview: true,
+      finishes: [{ id: 'std', en: 'As listed', ar: 'حسب الجدول' }],
+      variants: [
+        { size: '12×16',     label: 'Printed white', labelAr: 'مطبوع أبيض', moq: 4000, prices: { std: 3.75 } },
+        { size: '16×24',     label: 'Printed white', labelAr: 'مطبوع أبيض', moq: 2000, prices: { std: 6 } },
+        { size: '24×32',     label: 'Printed white', labelAr: 'مطبوع أبيض', moq: 1000, prices: { std: 11 } },
+        { size: '32×48',     label: 'Printed white', labelAr: 'مطبوع أبيض', moq: 1000, prices: { std: 20 } },
+        { size: '12.5×17.5', label: 'Plain',         labelAr: 'سادة',       moq: 400,  prices: { std: 3 } },
+        { size: '17.5×25',   label: 'Plain',         labelAr: 'سادة',       moq: 300,  prices: { std: 4 } },
+        { size: '35×25',     label: 'Plain',         labelAr: 'سادة',       moq: 200,  prices: { std: 6.5 } },
+        { size: '35×40',     label: 'Plain',         labelAr: 'سادة',       moq: 500,  prices: { std: 6 } },
+        { size: '35×50',     label: 'Plain',         labelAr: 'سادة',       moq: 500,  prices: { std: 9 } }
+      ],
+      moqNote: 'Three-side seal. Four-colour printing is quoted separately.',
+      moqNoteAr: 'تقفيل ثلاث جوانب. طباعة 4 ألوان بتتسعّر على حدة.'
+    },
+
     /* ---- page 1: فلاير شحن — courier bags (sold by weight) ---- */
     courier: {
       model: 'perKg',

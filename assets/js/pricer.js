@@ -109,14 +109,15 @@
     p.variants.forEach(function (v, i) {
       var sub = '';
       if (v.colour) sub = ar ? v.colourAr : v.colour;
+      if (v.label) sub = (ar ? v.labelAr : v.label) + (sub ? ' · ' + sub : '');
       if (v.sizeLabel) sub = (ar ? v.sizeLabelAr : v.sizeLabel) + (sub ? ' · ' + sub : '');
       h += '<button type="button" data-i="' + i + '" class="' + (st.variant === i ? 'is-on' : '') + '">' +
              esc(v.size) + (sub ? '<small>' + esc(sub) + '</small>' : '') + '</button>';
     });
     h += '</div></div>';
 
-    /* finishing picker */
-    if (p.model === 'finish') {
+    /* finishing picker — hidden when there is only one option to pick */
+    if (p.model === 'finish' && p.finishes.length > 1) {
       h += '<div class="pricer__row"><span class="pricer__legend">' + esc(t('finish')) + '</span><div class="opt" data-opt="finish">';
       p.finishes.forEach(function (f) {
         h += '<button type="button" data-f="' + f.id + '" class="' + (st.finish === f.id ? 'is-on' : '') + '">' +
